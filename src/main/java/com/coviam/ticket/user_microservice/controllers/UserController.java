@@ -92,13 +92,19 @@ public class UserController {
     }
 
     @PutMapping(
-            value = "/card/{userId}"
+            value = "/{userId}/card"
     )
     public ResponseEntity<?> addCardInfo(@PathVariable("userId") String userId, @RequestBody CardDTO cardInfo){
         userService.addCardInfo(userId, cardInfo);
         return ResponseEntity.ok(cardInfo);
     }
 
+
+    /**
+     * Get all cards from db as weak entities : testing purpose only, not to be used in production
+     * Delete this method during production.
+     * @return
+     */
     @GetMapping(
             value = "/card/all"
     )
