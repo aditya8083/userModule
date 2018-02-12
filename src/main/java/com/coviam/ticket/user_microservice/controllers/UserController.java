@@ -20,7 +20,8 @@ import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
-@RequestMapping("/users")
+@CrossOrigin("*")
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
@@ -32,7 +33,7 @@ public class UserController {
     ObjectNode objectNode = JsonNodeFactory.instance.objectNode();
 
     @PostMapping(
-            value = "",
+            value = "/addUser",
             consumes = APPLICATION_JSON_VALUE,
             produces = APPLICATION_JSON_VALUE
     )
