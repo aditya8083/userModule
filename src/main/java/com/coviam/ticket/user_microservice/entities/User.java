@@ -2,7 +2,6 @@ package com.coviam.ticket.user_microservice.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.sun.istack.internal.Nullable;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -19,7 +18,6 @@ public class User {
     @Id
     @GeneratedValue(generator = "stringGenerator")
     @GenericGenerator(name = "stringGenerator", strategy = "uuid2")
-    @Nullable
     private String id;
     @NotNull
     private String firstName;
